@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+
+<?php
+
+$f = "./artisan";
+
+if (file_exists($f)) {
+    require $f;
+} else {
+    echo "\033[41mERROR:\033[0m Unable to find the \033[1;35m\"$f\"\033[0m file. Are you in the project root?".PHP_EOL;
+}
