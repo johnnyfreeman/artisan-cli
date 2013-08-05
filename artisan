@@ -1,11 +1,36 @@
 #!/usr/bin/env php
-
 <?php
 
-$f = "./artisan";
+// Directory Separator
+defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
-if (file_exists($f)) {
-    require $f;
-} else {
-    echo "\033[41mERROR:\033[0m Unable to find the \033[1;35m\"$f\"\033[0m file. Are you in the project root?".PHP_EOL;
+
+// recursive function to find the 'artisan' file 
+// within the current project directory
+function findArtisan($dir = '.') {
+
+  // if artisan exist in $dir, run it
+  if(file_exists($file = $dir.DS.'artisan')) {
+    require $file;
+  }
+
+  // if not...
+  else {
+
+    // and we are currently at the root folder, 
+    // abort
+    if ($dir === DS) {
+      echo "\033[41mERROR:\033[0m Unable to find the \033[1;35m\"artisan\"\033[0m file.".PHP_EOL;
+      return;
+    }
+
+    // get real path of parent directory and run 
+    // this function again
+    if ($dir = realpath($dir.DS.'..')) {
+      return findArtisan($dir);
+    }
+  }
 }
+
+// start looking
+findArtisan();
