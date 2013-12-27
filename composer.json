@@ -1,0 +1,31 @@
+{
+  "name": "johnnyfreeman/artisan-cli",
+  "type": "library",
+  "description": "A global command line tool for Laravel's Artisan.",
+  "keywords": ["laravel","artisan", "global", "artisan-cli"],
+  "homepage": "https://github.com/johnnyfreeman/artisan-cli",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johnny Freeman",
+      "email": "prsjohnny@gmail.com",
+      "homepage": "http://github.com/johnnyfreeman",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "psr-0": {
+      "Coseva": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/johnnyfreeman/artisan-cli.git"
+    }
+  ],
+  "bin": ["bin/artisan"]
+}
