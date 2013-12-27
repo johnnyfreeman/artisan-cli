@@ -12,5 +12,5 @@ A global command line tool ( inspired by the [Grunt CLI](http://gruntjs.com/gett
 The recommended way to install [Artisan CLI](https://github.com/johnnyfreeman/artisan-cli) is through [composer](http://getcomposer.org/):
 
 ```shell
-composer global install johnnyfreeman/artisan-cli
+composer global require johnnyfreeman/artisan-cli:*
 ```
